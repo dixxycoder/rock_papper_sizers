@@ -19,18 +19,28 @@ class ViewController: UIViewController
     
     @IBOutlet weak var scissorsLook: UIImageView!
     
-    var rock = 0
-    var papper = 1
-    var scissors = 2
- 
+//     rock = 0
+//     papper = 1
+//     scissors = 2
+    
+    let randomNumber = Int.random(in: 0...2)
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        rockLook.image = UIImage(named: "0")
+        papperLook.image = UIImage(named: "1")
+        scissorsLook.image = UIImage(named: "2")
+        
+        comImage.image = UIImage(named: "\(randomNumber)")
+
     }
 
     @IBAction func tapToWin(_ sender: UITapGestureRecognizer)
     {
-        playImage.image = UIImage(named: "___")
+        
+        playImage.image = UIImage(named: "\(randomNumber)")
     }
     
 }
